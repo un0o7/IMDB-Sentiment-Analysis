@@ -1,0 +1,25 @@
+### model
+model_name_or_path: /home/qwu/tmp/qwen/Qwen2-7B-Instruct
+adapter_name_or_path: saves/qwen2
+
+### method
+stage: sft
+do_predict: true
+finetuning_type: lora
+
+### dataset
+dataset: imdb_test
+template: qwen
+cutoff_len: 1024
+max_samples: 25000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+output_dir: saves/qwen2/predict
+overwrite_output_dir: true
+
+### eval
+per_device_eval_batch_size: 1
+predict_with_generate: true
+ddp_timeout: 180000000
